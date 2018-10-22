@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msp_profile.normalizer.location" class="Msp\Bundle\ProfileBundle\Normalizer\LocationNormalizer" />
+
+        <service id="msp_profile.normalizer.contacts"
+                 class="Msp\Bundle\ProfileBundle\Normalizer\ContactsNormalizer">
+            <argument type="service" id="msp_profile.normalizer.location" />
+        </service>
+
+        <service id="msp_profile.normalizer.part" class="Msp\Bundle\ProfileBundle\Normalizer\PartNormalizer" />
+
+        <service id="msp_profile.normalizer.parts" class="Paysera\Component\Serializer\Normalizer\ArrayNormalizer">
+            <argument type="service" id="msp_profile.normalizer.part" />
+        </service>
+
+        <service id="msp_profile.normalizer.profile"
+                 class="Msp\Bundle\ProfileBundle\Normalizer\ProfileNormalizer"
+                 public="true">
+            <argument type="service" id="msp_profile.normalizer.contacts" />
+            <argument type="service" id="msp_profile.normalizer.parts" />
+        </service>
+    </services>
+</container>

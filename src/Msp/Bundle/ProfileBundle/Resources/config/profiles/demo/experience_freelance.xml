@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msp_profile.part_collection.experience_freelance.nickname"
+                 class="Msp\Bundle\ProfileBundle\Entity\PartCollection">
+            <tag name="msp_profile.part_collection" identifier="nickname" />
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>experience-item-freelance</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>experience-list</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_entry</argument>
+                        </call>
+                        <call method="setOrder">
+                            <argument>2</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>experience-item-freelance-company</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-freelance</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_workplace</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-freelance-company</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Freelancer</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_workplace_position</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-freelance</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>2005-01 - Present</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_duration</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-freelance</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu elit, tincidunt vitae lorem sit amet, pharetra tincidunt risus. Sed dignissim dui sit amet nisi placerat, at aliquet ante euismod.</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>paragraph</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-freelance</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Technologies used</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>heading</argument>
+                        </call>
+                        <call method="setProperties">
+                            <argument type="collection">
+                                <argument key="size">4</argument>
+                            </argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-freelance</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>badge_container</argument>
+                        </call>
+                        <call method="setProperties">
+                            <argument type="collection">
+                                <argument>Wordpress</argument>
+                                <argument>Opencart</argument>
+                                <argument>Magento</argument>
+                                <argument>Prestashop</argument>
+                                <argument>Woocommerce</argument>
+                            </argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+        </service>
+    </services>
+</container>

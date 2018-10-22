@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msp_profile.part_collection.education.nickname"
+                 class="Msp\Bundle\ProfileBundle\Entity\PartCollection">
+            <tag name="msp_profile.part_collection" identifier="nickname" />
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>education</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>section</argument>
+                        </call>
+                        <call method="setOrder">
+                            <argument>5</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setContent">
+                            <argument>Education</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>education</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>animated_heading</argument>
+                        </call>
+                        <call method="setProperties">
+                            <argument type="collection">
+                                <argument key="size">2</argument>
+                            </argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>education-list</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>education</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>list</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>education-list</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>2004 - 2005, MSc in Computer Science, MIT</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>list_item</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>education-list</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>2001 - 2004, BSc Maths and Physics, Imperial College London</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>list_item</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+        </service>
+    </services>
+</container>

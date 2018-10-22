@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msp_profile.profile.default" class="Msp\Bundle\ProfileBundle\Entity\Profile">
+            <tag name="msp_profile.profile" />
+
+            <call method="setIdentifier">
+                <argument>nickname</argument>
+            </call>
+
+            <call method="setName">
+                <argument>John Doe</argument>
+            </call>
+
+            <call method="setOccupation">
+                <argument>Super Programmer</argument>
+            </call>
+
+            <call method="setContacts">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Contacts">
+                        <call method="setEmail">
+                            <argument>j.doe@gmail.com</argument>
+                        </call>
+                        <call method="setPhone">
+                            <argument>(358) 741-7490</argument>
+                        </call>
+                        <call method="setLocation">
+                            <argument type="service">
+                                <service class="Msp\Bundle\ProfileBundle\Entity\Location">
+                                    <call method="setTitle">
+                                        <argument>North Pole</argument>
+                                    </call>
+                                    <call method="setUrl">
+                                        <argument>https://www.google.com/maps/place/Santa+Claus+Village/@66.5436144,25.8450033,17z</argument>
+                                    </call>
+                                </service>
+                            </argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,10 @@
+parameters:
+    env(DATABASE_HOST): localhost
+    env(DATABASE_PORT): ~
+    env(DATABASE_NAME): aboutme
+    env(DATABASE_USER): root
+    env(DATABASE_PASSWORD): ~
+    env(DATABASE_VERSION): 5.7
+
+    # A secret key that's used to generate certain security-related tokens
+    secret: ThisTokenIsNotSoSecretChangeIt

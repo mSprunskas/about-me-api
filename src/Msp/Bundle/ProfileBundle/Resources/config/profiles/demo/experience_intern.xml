@@ -1,0 +1,155 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msp_profile.part_collection.experience_intern.nickname"
+                 class="Msp\Bundle\ProfileBundle\Entity\PartCollection">
+            <tag name="msp_profile.part_collection" identifier="nickname" />
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>experience-item-intern</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>experience-list</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_entry</argument>
+                        </call>
+                        <call method="setOrder">
+                            <argument>3</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>experience-item-intern-company</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-intern</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_workplace</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-intern-company</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Intern / Web Developer</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_workplace_position</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-intern-company</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Web Factory LTD</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_workplace_name</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-intern</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>2004-06 / 2005-01</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>timeline_duration</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-intern</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Morbi semper orci at ex tristique sollicitudin. In libero sem, gravida sed pellentesque ac, porta eget dolor. In felis arcu, tincidunt vitae sem non, consequat blandit erat.</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>paragraph</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-intern</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Technologies used</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>heading</argument>
+                        </call>
+                        <call method="setProperties">
+                            <argument type="collection">
+                                <argument key="size">4</argument>
+                            </argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>experience-item-intern</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>badge_container</argument>
+                        </call>
+                        <call method="setProperties">
+                            <argument type="collection">
+                                <argument>PHP</argument>
+                                <argument>Javascript</argument>
+                                <argument>MySQL</argument>
+                                <argument>HTML</argument>
+                                <argument>CSS</argument>
+                            </argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+        </service>
+    </services>
+</container>

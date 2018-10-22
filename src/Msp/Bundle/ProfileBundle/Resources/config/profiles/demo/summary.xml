@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msp_profile.part_collection.summary.nickname"
+                 class="Msp\Bundle\ProfileBundle\Entity\PartCollection">
+            <tag name="msp_profile.part_collection" identifier="nickname" />
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>summary</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>section</argument>
+                        </call>
+                        <call method="setOrder">
+                            <argument>1</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setContent">
+                            <argument>Summary</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>summary</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>animated_heading</argument>
+                        </call>
+                        <call method="setProperties">
+                            <argument type="collection">
+                                <argument key="size">2</argument>
+                            </argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setContent">
+                            <argument>Duis in nulla sit amet lacus faucibus semper. Cras sed fermentum mauris. Sed placerat porta sem quis aliquet. Pellentesque lacinia vel dui eget faucibus.</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>summary</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>paragraph</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+        </service>
+    </services>
+</container>

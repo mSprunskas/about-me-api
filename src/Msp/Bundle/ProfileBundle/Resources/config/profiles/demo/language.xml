@@ -1,0 +1,258 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msp_profile.part_collection.language.nickname"
+                 class="Msp\Bundle\ProfileBundle\Entity\PartCollection">
+            <tag name="msp_profile.part_collection" identifier="nickname" />
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>language</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>section</argument>
+                        </call>
+                        <call method="setOrder">
+                            <argument>6</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setContent">
+                            <argument>Languages</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>language</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>animated_heading</argument>
+                        </call>
+                        <call method="setProperties">
+                            <argument type="collection">
+                                <argument key="size">2</argument>
+                            </argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>language-table</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>language</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>language-table-row-heading</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>language-table</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_row</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>language-table-row-heading</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Language</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_heading_cell</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>language-table-row-heading</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Level</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_heading_cell</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>language-table-row-native</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>language-table</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_row</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>language-table-row-native</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Navajo</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_cell</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>language-table-row-native</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Native</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_cell</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>language-table-row-na</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>language-table</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_row</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>language-table-row-na</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>English</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_cell</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>language-table-row-na</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Professional</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_cell</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setIdentifier">
+                            <argument>language-table-row-asl</argument>
+                        </call>
+                        <call method="setParentIdentifier">
+                            <argument>language-table</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_row</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>language-table-row-asl</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>ASL</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_cell</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+
+            <call method="addPart">
+                <argument type="service">
+                    <service class="Msp\Bundle\ProfileBundle\Entity\Part">
+                        <call method="setParentIdentifier">
+                            <argument>language-table-row-asl</argument>
+                        </call>
+                        <call method="setContent">
+                            <argument>Proficient</argument>
+                        </call>
+                        <call method="setLayout">
+                            <argument>table_cell</argument>
+                        </call>
+                    </service>
+                </argument>
+            </call>
+        </service>
+    </services>
+</container>

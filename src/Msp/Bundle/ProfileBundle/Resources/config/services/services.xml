@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="msp_profile.service.part_collection_registry"
+                 class="Msp\Bundle\ProfileBundle\Service\PartCollectionRegistry" />
+
+        <service id="msp_profile.service.profile_registry"
+                 class="Msp\Bundle\ProfileBundle\Service\ProfileRegistry" />
+
+        <service id="msp_profile.service.profile_provider_registry"
+                 class="Msp\Bundle\ProfileBundle\Service\ProfileProviderRegistry" />
+
+        <service id="msp_profile.service.profile_manager"
+                 class="Msp\Bundle\ProfileBundle\Service\ProfileManager">
+            <argument type="service" id="msp_profile.service.profile_provider_registry" />
+        </service>
+
+        <service id="msp_bundle_profile.service.config_profile_provider"
+                 class="Msp\Bundle\ProfileBundle\Service\ConfigProfileProvider">
+            <argument type="service" id="msp_profile.service.part_collection_registry" />
+            <argument type="service" id="msp_profile.service.profile_registry" />
+
+            <tag name="msp_profile.profile_provider" />
+        </service>
+
+        <service id="msp_bundle_profile.service.database_profile_provider"
+                 class="Msp\Bundle\ProfileBundle\Service\DatabaseProfileProvider">
+            <argument type="service" id="msp_profile.repository.profile" />
+
+            <tag name="msp_profile.profile_provider" />
+        </service>
+    </services>
+</container>

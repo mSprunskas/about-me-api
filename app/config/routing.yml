@@ -1,0 +1,3 @@
+msp_profile:
+    resource: "@MspProfileBundle/Resources/config/routing.xml"
+    prefix:   /
